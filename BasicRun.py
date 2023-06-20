@@ -6,7 +6,7 @@ from math import pi
 
 emax = 3       # maximum number of oscillator quanta in the model space
 ref = 'O17'     # reference used for normal ordering
-val = 'psd-shell' # valence space
+val = 'sd-shell' # valence space
 A = 17
 
 hw = 20    # harmonic oscillator basis frequency
@@ -96,10 +96,10 @@ for s in range(0,10,delta_s):
   VPTs +=  delta_s*Commutator.Commutator(etapv,H0) + delta_s*Commutator.Commutator(eta,VPTs)
   Schiff +=  delta_s*Commutator.Commutator(eta,Schiff)
 #  Schiffpp +=  delta_s*Commutator.Commutator(etapv,Schiff) + delta_s*Commutator.Commutator(eta,Schiffpp)
-#  Schiffpp += delta_s*Commutator.Commutator(eta,Schiffpp)
-  Schiffpp += delta_s*Commutator.Commutator(etapv,Schiff)
-#  Schiffpp += delta_s*Commutator.Commutator(etapv,Schiff)
   Schiffpp += delta_s*Commutator.Commutator(eta,Schiffpp)
+#  Schiffpp += delta_s*Commutator.Commutator(etapv,Schiff)
+  Schiffpp += delta_s*Commutator.Commutator(etapv,Schiff)
+#  Schiffpp += delta_s*Commutator.Commutator(eta,Schiffpp)
   print('parity=',Schiffpp.GetParity())
   print('particlerank=',Schiffpp.GetParticleRank())
   print('Jrank=',Schiffpp.GetJRank())
